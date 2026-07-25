@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-ink antialiased;
+    background:
+      radial-gradient(60% 50% at 78% 16%, rgba(148, 200, 242, 0.38), transparent 60%),
+      radial-gradient(52% 46% at 10% 6%, rgba(226, 240, 255, 0.6), transparent 60%),
+      linear-gradient(180deg, #f6faff 0%, #eef4fb 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(46, 147, 218, 0.22);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 30px rgba(20, 50, 80, 0.08);
+  }
+  .glass-hairline {
+    border: 1px solid rgba(160, 190, 220, 0.35);
+  }
+}
+
+/* Faint blueprint grid */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(90, 140, 190, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 140, 190, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
