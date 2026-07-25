@@ -3,20 +3,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.14, delayChildren: 0.35 } },
-}
-
-const item = {
-  hidden: { y: 26, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
-  },
-}
-
 export default function Hero() {
   const [reduced, setReduced] = useState(false)
   useEffect(() => {
@@ -44,68 +30,53 @@ export default function Hero() {
         )}
       </div>
 
-      {/* Legibility scrims (kept soft to preserve the airy feel) */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-48 bg-gradient-to-t from-black/45 to-transparent" />
+      {/* Soft vignette so the wordmark reads, without killing the airy feel */}
+      <div
+        className="pointer-events-none absolute inset-0 z-10"
+        style={{
+          background:
+            'radial-gradient(58% 55% at 50% 50%, rgba(4,12,20,0.45), rgba(4,12,20,0.15) 60%, transparent 82%)',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-black/35 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6">
-        <motion.div variants={container} initial="hidden" animate="show" className="max-w-2xl">
-          <motion.p
-            variants={item}
-            className="mb-6 font-mono text-xs uppercase tracking-[0.22em] text-white/70"
-          >
-            // ISO 9001:2015 &nbsp;·&nbsp; Since the 1990s
-          </motion.p>
-
-          <motion.h1
-            variants={item}
-            className="text-[clamp(3rem,8.5vw,7rem)] font-semibold leading-[0.94] tracking-[-0.035em] text-white"
-          >
-            The Standard
-            <br />
-            for{' '}
-            <span className="bg-gradient-to-r from-ice-200 to-ice-400 bg-clip-text text-transparent">
-              Standards
+      {/* Centered brand */}
+      <div className="absolute inset-0 z-20 grid place-items-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center"
+        >
+          <h1 className="font-semibold leading-none tracking-[0.14em] text-white text-[clamp(2rem,7vw,5.5rem)]">
+            CHROMACHEMIE
+          </h1>
+          <div className="mx-auto mt-5 flex items-center justify-center gap-4">
+            <span className="h-px w-10 bg-white/40" />
+            <span className="text-[11px] uppercase tracking-[0.42em] text-white/75">
+              Laboratory Pvt. Ltd.
             </span>
-          </motion.h1>
-
-          <motion.p
-            variants={item}
-            className="mt-7 max-w-md text-base leading-relaxed text-white/80"
-          >
-            Reference standards, chromatography &amp; custom synthesis — trusted by 90% of Indian
-            pharma.
-          </motion.p>
-
-          <motion.div variants={item} className="mt-10">
-            <a
-              href="#"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-ink shadow-[0_10px_40px_rgba(0,0,0,0.25)] transition-colors hover:bg-ice-100"
-            >
-              Browse Catalog
-              <svg
-                className="transition-transform group-hover:translate-x-0.5"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </motion.div>
+            <span className="h-px w-10 bg-white/40" />
+          </div>
         </motion.div>
       </div>
 
+      {/* Vertical brand on the side */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.8 }}
+        className="absolute left-6 top-1/2 z-20 -translate-y-1/2"
+      >
+        <span className="block rotate-180 text-[11px] uppercase tracking-[0.3em] text-white/50 [writing-mode:vertical-rl]">
+          Chromachemie&nbsp;·&nbsp;Bengaluru
+        </span>
+      </motion.div>
+
       {/* Scroll cue */}
-      <div className="absolute bottom-7 right-6 z-20 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/60">
+      <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/60">
         Scroll
-        <span className="inline-block h-8 w-px bg-gradient-to-b from-white/70 to-transparent" />
+        <span className="h-8 w-px bg-gradient-to-b from-white/70 to-transparent" />
       </div>
     </section>
   )

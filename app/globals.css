@@ -33,15 +33,6 @@
   }
 }
 
-/* Faint blueprint grid */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(90, 140, 190, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(90, 140, 190, 0.055) 1px, transparent 1px);
-  background-size: 44px 44px;
-  background-position: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

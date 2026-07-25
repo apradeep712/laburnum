@@ -29,3 +29,7 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# AI design tooling (re-installable via `npx impeccable install`)
+.claude/
+.impeccable/
