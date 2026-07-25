@@ -18,10 +18,19 @@ final visual language; this repo owns the **design engineering** (motion, 3D, da
   item), huge neutral grotesk, full-bleed image + centered overlay, tiny accent dot, footnote
   captions. → pattern reserved for the **4-pillar scroll story** section.
 - Glassy-sphere infographic mood (translucency, gradients) — vibe only.
+- **Hanergy** — GIANT full-bleed cinematic background (image/video), VERY few words, clean.
+  Adopted for the hero. Client dislikes "AI slop" → use real filmed footage / original code, never
+  generic AI-generated imagery.
+- **Adwise** — two-tone highlight headline (key words solid, rest muted), full-bleed texture band
+  between sections, glass stat cards (7+/140+/98%), GIANT wordmark footer, `// label` eyebrows,
+  newsletter row with arrow. → adopt two-tone headline + giant footer wordmark + `//` labels.
 
 ## Homepage plan
-1. **Hero** (built) — full-bleed translucent 3D glass molecule, "The Standard for Standards",
-   nav-only search, "Browse Catalog" CTA, 4 pillar tags, real Chromachemie facts.
+1. **Hero** (built, v2) — **full-bleed real stock VIDEO** (Hanergy pattern): filmed blue-ink-in-a-
+   glass clip (Pexels, free/commercial, compressed 83MB→2MB, `public/hero.mp4` + poster).
+   Ultra-minimal white text: `//` eyebrow, "The Standard for Standards", one line, one CTA.
+   Reduced-motion → shows poster still. Molecule (`components/Molecule.tsx`) reserved for a later
+   section. Swap in Chromachemie's own lab footage at `public/hero.mp4` when available.
 2. 4-pillar scroll story (pinned scroll-snap, Tresmares pattern).
 3. Trust counters (30+ yrs · 3,500+ USP standards · 90% of Indian pharma).
 4. Product categories — cinematic scroll panels (8 categories).
