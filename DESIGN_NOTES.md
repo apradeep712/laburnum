@@ -62,6 +62,10 @@ Custom Synthesis · Services (analytical/consultancy).
   glow card (21st.dev @easemize). Candidate for product/pillar/category cards on hover. Before use:
   drop the purple option, retune hues to ice-blue, hoist the shared listener+styles if many cards,
   test `background-attachment: fixed` on mobile.
+- **ZoomParallax** (`components/blocks/zoom-parallax.tsx`) — bespoke, license-free equivalent of
+  21st.dev @sshahaider/zoom-parallax (registry needs auth). Scroll-linked photo-grid zoom over a
+  300vh pinned section. Reduced-motion safe, Lenis-friendly, ice-blue glass placeholders by default.
+  Use for a facility/lab/product/certificate gallery reveal; pass real /public images before shipping.
 - **3D Photo Carousel** (cult-ui) — NOT vendored (installs via shadcn registry). To add later:
   `npx shadcn@latest add "https://21st.dev/r/cult-ui/3d-carousel"` (needs `npx shadcn init` first),
   then `import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"`. Could showcase
