@@ -49,3 +49,19 @@ first in India to introduce EP/BP/US pharmacopeial standards (1990s) · ISO 9001
 offices: Bengaluru (HQ), Mumbai, Hyderabad, Goa, Ahmedabad, Dubai · exports to BD/LK/PK/MENA.
 Pillars: Reference Standards (USP/EP/BP/IP/JP, ATCC, CIL) · Chromatography (Puritas™, COSMOSIL) ·
 Custom Synthesis · Services (analytical/consultancy).
+
+## Saved components (future use — NOT wired in yet)
+- **ScrollExpandMedia** (`components/blocks/scroll-expansion-hero.tsx`) — scroll-driven hero where
+  media expands to full-bleed then reveals content. Source: 21st.dev (@arunachalam / scroll-
+  expansion-hero). Before use: gate scroll-jack behind reduced-motion, resolve conflict with Lenis,
+  re-skin to ice-blue tokens, add next.config remotePatterns if remote media. Run `/impeccable polish`.
+- **Globe → Map transform** (v0 template `99MAOQptgL3`, d3/dataviz) — candidate for a "Global reach"
+  section (India/BD/PK/MENA/Dubai). Community template, license unclear → prefer building bespoke
+  with `cobe` + D3/SVG in our aesthetic.
+
+## Using v0 / 21st.dev components (how-to)
+- v0 blocks install via the shadcn registry: `npx shadcn@latest add "https://v0.app/chat/b/<id>"`
+  (get the exact URL from the template's "Open in v0" → "Add to Codebase"). Needs `npx shadcn init`
+  first (creates components.json, `cn()`, `@/components/ui`).
+- Always: check the license (community templates often have none), re-skin to our tokens, and run
+  the Impeccable detector (`npx impeccable detect`) before shipping.
