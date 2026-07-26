@@ -58,6 +58,14 @@ Custom Synthesis · Services (analytical/consultancy).
 - **Globe → Map transform** (v0 template `99MAOQptgL3`, d3/dataviz) — candidate for a "Global reach"
   section (India/BD/PK/MENA/Dubai). Community template, license unclear → prefer building bespoke
   with `cobe` + D3/SVG in our aesthetic.
+- **GlowCard / spotlight-card** (`components/blocks/spotlight-card.tsx`) — pointer-tracking spotlight
+  glow card (21st.dev @easemize). Candidate for product/pillar/category cards on hover. Before use:
+  drop the purple option, retune hues to ice-blue, hoist the shared listener+styles if many cards,
+  test `background-attachment: fixed` on mobile.
+- **3D Photo Carousel** (cult-ui) — NOT vendored (installs via shadcn registry). To add later:
+  `npx shadcn@latest add "https://21st.dev/r/cult-ui/3d-carousel"` (needs `npx shadcn init` first),
+  then `import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"`. Could showcase
+  facility/product/certificate imagery. Re-skin + license-check before shipping.
 
 ## Using v0 / 21st.dev components (how-to)
 - v0 blocks install via the shadcn registry: `npx shadcn@latest add "https://v0.app/chat/b/<id>"`
